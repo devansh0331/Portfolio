@@ -37,6 +37,9 @@ import java from "../assets/logos/java.png";
 import { SiSolidity } from "react-icons/si";
 import { GithubAPI } from "../config/api";
 
+// RESUME
+import resume from "../assets/resume/Resume1.pdf";
+
 function AboutPage() {
   const [latestCommit, setLatestCommit] = useState(new Date());
   const skills = [
@@ -121,9 +124,14 @@ function AboutPage() {
           <br />
           <div className="w-full flex flex-col md:flex-row items-start justify-between">
             <div className="w-fit font-bold text-xl  flex items-center text-darkGray hover:text-white">
-              <p className="cursor-pointer ">Resume &nbsp;</p>
-
-              <FaArrowCircleDown className="" />
+              <a
+                href={resume}
+                download={true}
+                className="cursor-pointer flex items-center"
+              >
+                Resume &nbsp;
+                <FaArrowCircleDown className="" />
+              </a>
             </div>
             <div className="font-bold text-md cursor-pointer text-darkGray hover:text-white">
               {/* <p>
