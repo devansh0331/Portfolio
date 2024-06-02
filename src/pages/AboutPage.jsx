@@ -143,13 +143,19 @@ function AboutPage() {
       </div>
       <div className="h-full w-full mt-5 md:mt-0 md:w-1/4 flex flex-col items-center justify-between shadow-white shadow-sm rounded-sm">
         <div className="w-full">
-          <a target="_blank" href="">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/devansh-shrivastava-94228a230/"
+          >
             <img src={about} alt="" className=" w-full blur-0   bg-darkBlack" />
           </a>
-          <div className=" font-bold flex items-center justify-center p-3 cursor-pointer text-darkGray hover:text-white">
+          <a
+            href="mailto:devanshshrivastava07@gmail.com"
+            className=" font-bold flex items-center justify-center p-3 cursor-pointer text-darkGray hover:text-white"
+          >
             Available for Freelance &nbsp;
             <FaEnvelopeSquare />
-          </div>
+          </a>
         </div>
         <hr />
         <div className="hidden  w-full h-full p-4 md:grid grid-cols-1 gap-0 ">
