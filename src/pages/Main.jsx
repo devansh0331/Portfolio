@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
+import ProjectPage from "./ProjectPage";
+import "animate.css/animate.compat.css";
 
 function Main() {
   return (
@@ -9,6 +11,7 @@ function Main() {
       <Navbar />
       <HomePage />
       <AboutPage />
+      <ProjectPage />
     </div>
   );
 }

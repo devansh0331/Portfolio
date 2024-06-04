@@ -6,6 +6,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import { BrowserRouter } from "react-router-dom";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { CryptoContextProvider } from "./Context.jsx";
+import "animate.css/animate.compat.css";
 import TimeAgo from "javascript-time-ago";
 
 import en from "javascript-time-ago/locale/en";
