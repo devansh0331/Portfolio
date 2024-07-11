@@ -4,7 +4,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 function ProjectPage() {
   return (
-    <div className="w-full h-full flex flex-col  items-center justify-center md:justify-evenly text-darkText">
+    <div className="w-full h-screen flex flex-col  items-center justify-center md:justify-evenly text-darkText">
       <div className="text-darkYellow">
         <h1 className="text-3xl text-darkYellow font-semibold text-center">
           My Recent Projects

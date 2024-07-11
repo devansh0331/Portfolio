@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import about from "../assets/about3.jpeg";
-import { Button } from "@material-tailwind/react";
+import { Badge, Button } from "@material-tailwind/react";
 import { FaArrowCircleDown, FaArrowCircleRight, FaEdit } from "react-icons/fa";
 import { FaEnvelopeSquare } from "react-icons/fa";
 import ReactTimeAgo from "react-time-ago";
@@ -91,8 +91,6 @@ function AboutPage() {
 
       if (res) {
         setLatestCommit(res.commit.commit.author.date);
-        console.log(res.commit.commit.author.date);
-        console.log(latestCommit);
       } else {
       }
     } catch (error) {
@@ -102,26 +100,94 @@ function AboutPage() {
 
   return (
     <div className="relative w-full h-full bg-darkBg flex flex-col md:flex-row items justify-between">
-      <p className="absolute top-3 left-3 font-bold flex items-center text-darkGray">
+      <p className="hidden absolute top-3 left-3 font-bold md:flex items-center text-darkGray">
         <FaEdit /> &nbsp;
         <ReactTimeAgo date={latestCommit} locale="en-US" />
       </p>
       <div className=" h-full w-full flex flex-col items-center justify-center">
-        <div className="w-11/12 mt-5 md:mt-0 md:w-3/4 mx-auto shadow-white shadow-sm rounded-sm p-5">
+        <div className="w-11/12 mt-5 md:mt-0 md:w-3/4 mx-auto shadow-white shadow-sm rounded-sm p-2 md:p-5">
           <p className="text-5xl font-semibold text-darkYellow">About</p>
           <hr className="my-3" />
-          <p className="text-justify">
-            Hi! I'm a passionate full stack web developer, a budding blockchain
-            developer, and a dedicated B.Tech student. With a high interest in
-            building dynamic and responsive web applications, I'm proficient in
-            both front-end and back-end technologies. Fascinated by the
+          <div className="grid grid-cols-1 gap-4">
+            <div>
+              <p className="text-xl text-gray-500">Introduction</p>
+              <p className="ml-2 md:ml-5 text-justify md:text-left text-sm md:text-base italic text-gray-300">
+                Hi! I'm a passionate full stack web developer, a budding
+                blockchain developer, and a dedicated B.Tech student. With a
+                high interest in building dynamic and responsive web
+                applications, I'm proficient in both front-end and back-end
+                technologies.
+                {/* Fascinated by the
             potential of decentralized technologies, I have a solid
             understanding of blockchain fundamentals and hands-on experience in
-            smart contracts. Eager to learn and grow, I'm constantly exploring
-            new areas in tech and ready to take on exciting opportunities. Let's
-            create something amazing together!
-          </p>
+          smart contracts. */}
+                Eager to learn and grow, I'm constantly exploring new areas in
+                tech and ready to take on exciting opportunities. Let's create
+                something amazing together!
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xl text-gray-500">Education</p>
+              <div className="ml-2 md:ml-5 grid md:grid-cols-2">
+                <p className=" text-left text-sm italic text-gray-300">
+                  <span className="text-darkYellow">B.Tech:</span> Bhilai
+                  Institute of Technology, Durg (2025)
+                </p>
+                <p className=" text-left text-sm italic text-gray-300">
+                  <span className="text-darkYellow">High School:</span> St.
+                  Francis Sn. Sec. School, Bilaspur (2021)
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xl text-gray-500">Experience</p>
+              <div className="ml-2 md:ml-5  text-sm grid md:grid-cols-2">
+                <p className=" text-left italic text-gray-300">
+                  <span className="text-darkYellow">Feevin Media:</span> Website
+                  Development Intern (Nov.2023-Dec.2024)
+                </p>
+                <p className=" text-left italic text-gray-300">
+                  <span className="text-darkYellow">IIT Bhilai:</span> Project
+                  Research (May.2024-present)
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className="text-xl text-gray-500">Achievement</p>
+              <div className="ml-2 md:ml-5  text-sm grid md:grid-cols-2">
+                <p className=" text-left italic text-gray-300">
+                  <span className="text-darkYellow">Hult Prize:</span> Campus
+                  Director (2023-2024)
+                </p>
+                <p className=" text-left italic text-gray-300">
+                  <span className="text-darkYellow">Public Speaking Club:</span>{" "}
+                  President (2023-2024)
+                </p>
+                <p className=" text-left italic text-gray-300">
+                  <span className="text-darkYellow">TechnoHub:</span> Technical
+                  Head (2023-2024)
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className="text-xl text-gray-500">Contact</p>
+              <div className="ml-2 md:ml-5  text-sm grid md:grid-cols-2">
+                <p className=" text-left  italic text-gray-300">
+                  <span className="text-darkYellow">Email:</span>{" "}
+                  devanshshrivastava07@gmail.com
+                </p>
+                <p className=" text-left  italic text-gray-300">
+                  <span className="text-darkYellow">Phone:</span> +91 62322
+                  75431
+                </p>
+              </div>
+            </div>
+          </div>
+
           <br />
+
           <div className="w-full flex flex-col md:flex-row items-start justify-between">
             <div className="w-fit font-bold text-xl  flex items-center text-darkGray hover:text-white">
               <a
@@ -141,24 +207,35 @@ function AboutPage() {
           </div>
         </div>
       </div>
-      <div className="h-full w-full mt-5 md:mt-0 md:w-1/4 flex flex-col items-center justify-between shadow-white shadow-sm rounded-sm">
+      <div className="h-full w-full  mt-0 md:w-1/4 p-4 grid grid-cols-2 md:flex md:flex-col items-start justify-between shadow-white shadow-sm rounded-sm">
         <div className="w-full">
           <a
             target="_blank"
             href="https://www.linkedin.com/in/devansh-shrivastava-94228a230/"
           >
-            <img src={about} alt="" className=" w-full blur-0   bg-darkBlack" />
+            <img
+              src={about}
+              alt=""
+              className="w-28 h-28 md:w-full md:h-fit blur-0 rounded-full md:rounded-md  bg-darkBlack"
+            />
           </a>
-          <a
-            href="mailto:devanshshrivastava07@gmail.com"
-            className=" font-bold flex items-center justify-center p-3 cursor-pointer text-darkGray hover:text-white"
-          >
-            Available for Freelance &nbsp;
-            <FaEnvelopeSquare />
-          </a>
+          <div className="w-full text-center md:p-3">
+            <a
+              href="mailto:devanshshrivastava07@gmail.com"
+              className="w-fit font-semibold  p-1 px-3 cursor-pointer text-sm bg-green-900 backdrop-blur-md text-light-green-200 hover:text-white rounded-md"
+            >
+              {/* <Badge content="5"> */}
+              Available{" "}
+              <span className="hidden md:inline">
+                for Freelance
+                {/* <FaEnvelopeSquare /> */}
+              </span>
+              {/* </Badge> */}
+            </a>
+          </div>
         </div>
-        <hr />
-        <div className="hidden  w-full h-full p-4 md:grid grid-cols-1 gap-0 ">
+        {/* <hr /> */}
+        <div className=" text-sm md:text-base  w-full h-full p-4 md:grid grid-cols-1 gap-0 ">
           <div>
             <p className=" font-semibold mb-2 text-darkYellow">.Development</p>
             <div className="w-full  grid grid-cols-5 gap-6">
@@ -174,19 +251,14 @@ function AboutPage() {
               ))}
             </div>
           </div>
-          <div>
+          <div className="mt-5 md:mt-0">
             <p className="font-semibold mb-2 text-darkYellow">
               .Coding Languages
             </p>
-            <div className="w-full mt-3 grid grid-cols-5 gap-6">
-              {/* {languages.map((item, key) => (
-                <p key={key} className="text-3xl">
-                  {item.language}
-                </p>
-              ))} */}
+            <div className="w-full mt-3 grid grid-cols-3 md:grid-cols-5 gap-6">
               {languages1.map((item, key) => (
                 <a key={key} target="_blank" href={item.docs}>
-                  <img src={item.language} className="w-20" />
+                  <img src={item.language} className="w-40" />
                 </a>
               ))}
             </div>
