@@ -38,7 +38,7 @@ import { SiSolidity } from "react-icons/si";
 import { GithubAPI } from "../config/api";
 
 // RESUME
-import resume from "../assets/resume/Resume1.pdf";
+import resume from "../assets/resume/UpdatedResume.pdf";
 
 function AboutPage() {
   const [latestCommit, setLatestCommit] = useState(new Date());
